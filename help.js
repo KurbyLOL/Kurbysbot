@@ -24,7 +24,7 @@ module.exports = {
                 { name: `Description`, value: `${cmd.description ?? "None"}`, inline: true },
                 { name: `Usage`, value: `${cmd.usage ?? `/${cmd.name}`}`, inline: true },
             )
-            .setFooter({ text: `https://github.com/Skyy2K/MusicBot`, iconURL: `https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png` })
+            .setFooter({ text: `Kurbys`, iconURL: `https://cdn.discordapp.com/attachments/1202445750538342440/1210360411321409598/9cce8e1553b9646cd1765813fe5ffe92_1.png?ex=65ea46f9&is=65d7d1f9&hm=0d81a8f13d053e0879a9bc7993552b1724548e32cdcf25ca04e053aeeef7e47c&` })
             .setTimestamp();
             return interaction.followUp({ embeds: [commandEmbed] });
         }
@@ -33,7 +33,7 @@ module.exports = {
         .setColor(`Aqua`)
         .setTitle(`${client.user.tag}'s Commands`)
         .setDescription(`${commands.join("\n")}`)
-        .setFooter({ text: `https://github.com/Skyy2K/MusicBot`, iconURL: `https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png` })
+        .setFooter({ text: `kurbys`, iconURL: `https://cdn.discordapp.com/attachments/1202445750538342440/1210360411321409598/9cce8e1553b9646cd1765813fe5ffe92_1.png?ex=65ea46f9&is=65d7d1f9&hm=0d81a8f13d053e0879a9bc7993552b1724548e32cdcf25ca04e053aeeef7e47c&` })
         .setTimestamp();
         return interaction.followUp({ embeds: [helpEmbed] });
     }

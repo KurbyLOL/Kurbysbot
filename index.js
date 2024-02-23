@@ -1,28 +1,14 @@
-const client = require("../index");
-const { glob } = require("glob");
-const { promisify } = require("util");
-const logger = require("../util/logger");
+const { Client, Collection } = require("discord.js");
+const { Player } = require("discord-player");
 
-const globPromise = promisify(glob);
+const client = new Client({ intents: ["Guilds", "GuildVoiceStates"] });
+client.commands = new Collection();
+client.player = new Player(client);
 
-(async () => {
-    const eventFiles = await globPromise(`./events/*.js`);
-    eventFiles.map((file) => require(`.${file}`));
+module.exports = client;
 
-    const commandsArray = [];
+const config = require("./config");
 
-    const commandFiles = await globPromise(`./commands/*.js`);
-    commandFiles.map((file) => {
-        const cmd = require(`.${file}`);
-        if (!cmd?.name) return;
-        client.commands.set(cmd.name, cmd);
+require("./handler");
 
-        commandsArray.push(cmd);
-    });
-
-    client.on("ready", async () => {
-        await client.application.commands.set(commandsArray)
-        .then(() => logger.info(`Registered ${commandsArray.length} commands.`))
-        .catch((error) => logger.error(`Unable to register commands: ${error}`));
-    });
-})();
+client.login(config.token);

@@ -51,7 +51,7 @@ module.exports = {
                 .replace("{PLAYLIST.TITLE}", `${results.playlist.title}`)
                 .replace("{PLAYLIST.LINK}", `${results.playlist.url}`)
             }`)
-            .setFooter({ text: `https://github.com/Skyy2K/MusicBot`, iconURL: `https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png` })
+            .setFooter({ text: `kurbys`, iconURL: `https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png` })
             .setTimestamp();
             interaction.followUp({ embeds: [playlistEmbed] });
         } else {
@@ -63,7 +63,7 @@ module.exports = {
                 .replace("{TRACK}", `${results.tracks[0].title}`)
                 .replace("{TRACK.TITLE}", `${results.tracks[0].title}`)
                 .replace("{TRACK.LINK}", `${results.tracks[0].url}`)}`)
-            .setFooter({ text: `https://github.com/Skyy2K/MusicBot`, iconURL: `https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png` })
+            .setFooter({ text: `https://github.com/Skyy2K/MusicBot`, iconURL: `https://cdn.discordapp.com/attachments/1202445750538342440/1210360411321409598/9cce8e1553b9646cd1765813fe5ffe92_1.png?ex=65ea46f9&is=65d7d1f9&hm=0d81a8f13d053e0879a9bc7993552b1724548e32cdcf25ca04e053aeeef7e47c&` })
             .setTimestamp();
             interaction.followUp({ embeds: [trackEmbed] });
         };
